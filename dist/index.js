@@ -256,9 +256,10 @@ var url = window.location.pathname;
 exports.init = function (bs) {
     bs.socket.on("file:reload", exports.reload(bs));
     bs.socket.on("browser:reload", function () {
-        if (bs.canSync({url: url}, OPT_PATH)) {
+        // TODO: toggle this with an option
+        //if (bs.canSync({url: url}, OPT_PATH)) {
             exports.reloadBrowser(true);
-        }
+        //}
     });
 };
 
